@@ -12,3 +12,4 @@
 - GestureDetector : DecoratedBox, BoxDecoration, DecorationImage
 - FittedBox : ListView, Material, ClipRRect
 - customclipper_image : ClipOval, ClipRRect, ClipRect, ClipPath
+- stepper_1 : Expanded, List, TextFormField, InputDecoration
