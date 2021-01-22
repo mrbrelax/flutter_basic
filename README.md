@@ -4,7 +4,6 @@
 - BoxDecoration
 - RotatedBox
 - ListView Horizontal
-- ListView Vertical
 - SingleChildScrollView
 - GridView
 - PageView : PageController, viewportFraction
