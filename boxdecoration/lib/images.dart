@@ -1,0 +1,1 @@
+const String placeHolder =  "assets/img/placeholders.png";

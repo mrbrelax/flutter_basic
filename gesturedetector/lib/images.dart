@@ -1,0 +1,1 @@
+const String bri = "assets/img/bri.jpeg";
