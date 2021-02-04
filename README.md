@@ -13,3 +13,11 @@
 - customclipper_image : ClipOval, ClipRRect, ClipRect, ClipPath
 - stepper_1 : Expanded, List, TextFormField, InputDecoration
 - Drawer with Routing
+- Text Widget : DefaultTextStyle, RichText, Text.rich, TextSpan
+- alertdialog : Global, ReUsable | logout
+- BottomNavigationBar
+- BottomNavyBar : Curves, Icon, Text, Colors, TextAlign, Items
+- SplashScreen : CircleAvatar, Expanded, CircularProgressIndicator
+- PopupMenu : PopupMenuButton, MenuOption, PopupMenuItem, Text, Icon
+- TabBar
+- FractionalTranslation : SizedBox, PageView, FractionalOffset, Stack
