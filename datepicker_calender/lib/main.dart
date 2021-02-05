@@ -5,109 +5,149 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      home: HomePage(),
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
+        primaryColor: Colors.blue,
+        accentColor: Colors.blueAccent,
+        primaryColorLight: Colors.lightBlue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
-
+class HomePage extends StatefulWidget {
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _HomePageState createState() => _HomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+const MaterialColor _buttonTextColor = MaterialColor(0xFF2196F3, <int, Color>{
+  50: Color(0xFF2196F3),
+  100: Color(0xFF2196F3),
+  200: Color(0xFF2196F3),
+  300: Color(0xFF2196F3),
+  400: Color(0xFF2196F3),
+  500: Color(0xFF2196F3),
+  600: Color(0xFF2196F3),
+  700: Color(0xFF2196F3),
+  800: Color(0xFF2196F3),
+  900: Color(0xFF2196F3),
+});
 
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
+class _HomePageState extends State<HomePage> {
+  String title = "DatePicker & Calender";
+
+  DateTime _date = DateTime.now();
+
+  Future<Null> _selectDate(BuildContext context) async {
+    DateTime _datePicker = await showDatePicker(
+        context: context,
+        // CurrentDate :
+        initialDate: _date,
+        // FirstDate :
+        firstDate: DateTime(1947),
+        // LastDate :
+        lastDate: DateTime(2040),
+        // Header Text or Button Direction ltr or rtl :
+        textDirection: TextDirection.ltr,
+        // Day or Year Mode :
+        initialDatePickerMode: DatePickerMode.day,
+        // WeekDay Off :
+        selectableDayPredicate: (DateTime val) =>
+            val.weekday == 6 || val.weekday == 7 ? false : true,
+        builder: (BuildContext context, Widget child) {
+          return Theme(
+            data: ThemeData(
+              // Button Color OK and Cancel :
+              primarySwatch: _buttonTextColor,
+              // Picked or select Date Color :
+              primaryColor: Colors.blue,
+              // Picked or select Date Color :
+              accentColor: Colors.blueAccent,
+            ),
+            child: child,
+          );
+        });
+    if (_datePicker != null && _datePicker != _date) {
+      setState(() {
+        _date = _datePicker;
+        print(
+          _date.toString(),
+        );
+      });
+    }
   }
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return Scaffold(
       appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+        title: Text(title),
+        centerTitle: true,
       ),
       body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
         child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
+            Padding(
+              padding: EdgeInsets.all(16.0),
+              child: TextFormField(
+                cursorColor: Colors.blue,
+                readOnly: true,
+                onTap: () {
+                  setState(() {
+                    _selectDate(context);
+                  });
+                },
+                decoration: InputDecoration(
+                  // you can style labelText :
+                  labelText: 'Select Date',
+                  labelStyle: TextStyle(fontSize: 16.0),
+                  // you can style hintText :
+                  hintText: (_date.toString()),
+                  // Focused Border OutLine :
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.blue, width: 2.0),
+                    // BorderRadius for OutLine :
+                    borderRadius: BorderRadius.circular(50.0),
+                  ),
+                  // Normal Border :
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(5.0),
+                  ),
+                ),
+              ),
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: RaisedButton(
+                color: Colors.blue,
+                onPressed: () {
+                  setState(() {
+                    _selectDate(context);
+                  });
+                },
+                child: Text(
+                  "Date Picker",
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
+              ),
             ),
+            Padding(
+              padding: EdgeInsets.all(16.0),
+              child: Text(
+                _date.toString(),
+                style: TextStyle(fontSize: 20.0),
+              ),
+            )
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
