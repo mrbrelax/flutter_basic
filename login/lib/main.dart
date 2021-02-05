@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -247,16 +248,24 @@ class _HomePageState extends State<HomePage> {
                                   padding: EdgeInsets.only(top: 16.0),
                                   child: Align(
                                     alignment: Alignment.center,
-                                    child: FlatButton(
-                                      color: Colors.white,
-                                      highlightColor: Colors.transparent,
-                                      onPressed: () {},
-                                      child: Text(
-                                        "Don't have an account ? Sign Up",
+                                    child: RichText(
+                                      text: TextSpan(
+                                        text: 'Don\'t have an account ? ',
                                         style: TextStyle(
-                                          color: Colors.black,
                                           fontSize: 15.0,
+                                          color: Colors.black,
                                         ),
+                                        children: <TextSpan>[
+                                          TextSpan(
+                                            text: 'Sign Up',
+                                            style: TextStyle(
+                                              fontSize: 15.0,
+                                              color: Colors.blue,
+                                            ),
+                                            recognizer: TapGestureRecognizer()
+                                              ..onTap = () {},
+                                          ),
+                                        ],
                                       ),
                                     ),
                                   ),
