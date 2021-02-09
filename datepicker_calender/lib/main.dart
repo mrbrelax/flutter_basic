@@ -142,7 +142,7 @@ class _HomePageState extends State<HomePage> {
               padding: EdgeInsets.all(16.0),
               child: Text(
                 _date.toString(),
-                style: TextStyle(fontSize: 20.0),
+                style: TextStyle(fontSize: 28.0),
               ),
             )
           ],
