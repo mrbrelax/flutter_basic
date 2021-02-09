@@ -25,3 +25,4 @@
 - datepicker_calender : DateTime, showDatePicker, DatePickerMode
 - timepicker_clock : TimeOfDay, showTimePicker, Directionality
 - colorgradient : LinearGradient,RadialGradient
+- rangeslider : RangeValues, RangeLabels
