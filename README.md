@@ -26,3 +26,4 @@
 - timepicker_clock : TimeOfDay, showTimePicker, Directionality
 - colorgradient : LinearGradient,RadialGradient
 - rangeslider : RangeValues, RangeLabels
+- SliverAppBar
