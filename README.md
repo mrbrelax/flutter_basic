@@ -27,3 +27,4 @@
 - colorgradient : LinearGradient,RadialGradient
 - rangeslider : RangeValues, RangeLabels
 - SliverAppBar
+- signup : TextField, FlatButton, Expanded, BoxConstraints
