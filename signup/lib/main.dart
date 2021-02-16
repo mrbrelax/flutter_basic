@@ -236,7 +236,7 @@ class _HomePageState extends State<HomePage> {
                                           _isHidden
                                               ? Icons.visibility
                                               : Icons.visibility_off,
-                                              color: Colors.white,
+                                          color: Colors.white,
                                         ),
                                       ),
                                     ),
@@ -251,6 +251,7 @@ class _HomePageState extends State<HomePage> {
                                     right: 16.0,
                                   ),
                                   width: double.infinity,
+                                  // ignore: deprecated_member_use
                                   child: RaisedButton(
                                     onPressed: () {},
                                     elevation: 5.0,
@@ -268,6 +269,8 @@ class _HomePageState extends State<HomePage> {
                                     ),
                                   ),
                                 ),
+                                Divider(color: Colors.blue),
+                                // ignore: deprecated_member_use
                                 FlatButton(
                                   onPressed: () {},
                                   highlightColor: Colors.transparent,
