@@ -41,3 +41,4 @@
 - null_safety
 - httprequest_postmethod
 - httprequest_getmethod
+- httprequest_fetchdata
