@@ -42,3 +42,12 @@
 - httprequest_postmethod
 - httprequest_getmethod
 - httprequest_fetchdata
+- bloc_statemanagement
+- linearprogressindicator 
+- multiprovider_statemanagement 
+- navigationrail
+- sharedpreferences_doublequestionmarkoperator
+- statemanagement_provider 
+- swipe_to_dismiss
+- swipe_to_slidable 
+- switch_and_animatedswitcher_widget 
