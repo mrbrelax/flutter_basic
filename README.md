@@ -52,3 +52,9 @@
 - swipe_to_slidable 
 - switch_and_animatedswitcher_widget 
 - speeddial : FloatingActionButton, Color, Container, AnimatedIcons
+- responsive_architecture
+- layoutgrid
+- flutter_bloc_demo
+- fabcircularmenu : CircleBorder, GlobalKey, RawMaterialButton.
+- durationpicker
+- web_basic
