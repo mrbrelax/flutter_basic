@@ -58,3 +58,5 @@
 - fabcircularmenu : CircleBorder, GlobalKey, RawMaterialButton.
 - durationpicker
 - web_basic
+- balloonslider
+- timer
