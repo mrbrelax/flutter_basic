@@ -60,3 +60,4 @@
 - web_basic
 - balloonslider
 - timer
+- custom_window_title
