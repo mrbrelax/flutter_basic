@@ -1,0 +1,1 @@
+const String logo = "assets/img/bbm-enterprise_logo.png";
