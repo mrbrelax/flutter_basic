@@ -72,3 +72,4 @@
 - model
 - MediaQuery Basic
 - layout_builder
+- hero_cliprrect
