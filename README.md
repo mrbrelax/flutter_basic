@@ -47,7 +47,6 @@
 - multiprovider_statemanagement 
 - navigationrail
 - sharedpreferences_doublequestionmarkoperator
-- statemanagement_provider 
 - swipe_to_dismiss
 - swipe_to_slidable 
 - switch_and_animatedswitcher_widget 
@@ -73,3 +72,4 @@
 - MediaQuery Basic
 - layout_builder
 - hero_cliprrect
+- providerstatemanagement
